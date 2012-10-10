@@ -1,0 +1,425 @@
+#% Do not delete the line below; configure depends on this
+#  \DeclareLaTeXClass[uumthesis,memoir]{book (uumthesis)}
+# UUMThesis textclass definition file
+# Author: Lim Lian Tze <liantze@gmail.com>
+# Modified from memoir.layout by Jürgen Spitzmüller <spitzmueller@gmx.de>
+
+
+Format 35
+Columns            1
+Sides              2
+SecNumDepth        5
+TocDepth           5
+DefaultStyle       Standard
+#PageStyle          Headings
+Provides makeidx   1
+Provides framed    1
+Provides subscript 1
+# Memoir has support for line spacing, but uses different names from
+# what setspace.sty does.  
+Provides SetSpace  1
+
+
+#ClassOptions
+#	FontSize             9|10|11|12|14|17
+#	PageStyle            empty|plain|headings|myheadings|ruled|Ruled|companion
+#	Other                oldfontcommands
+#End
+
+
+Style Standard
+	Margin                Static
+	LatexType             Paragraph
+	LatexName             dummy
+	ParIndent             MM
+	ParSkip               0.4
+	Align                 Block
+	AlignPossible         Block, Left, Right, Center
+	LabelType             No_Label
+End
+
+Style Degreetype
+        Margin                Static
+        LatexType             Command
+        Category              FrontMatter
+        InTitle               1
+        LatexName             degreetype
+        LabelSep              xxx
+        ParSkip               0.4
+        TopSep                1.3
+        BottomSep             0.7
+        ParSep                0.7
+        Align                 Center
+        LabelType             No_Label
+        Font
+          Size                Large
+        EndFont
+End
+
+
+Style Abstrak
+        Margin                Static
+        LatexType             Environment
+        LatexName             abstrak
+        Category              FrontMatter
+        NextNoIndent          1
+        LeftMargin            MMM
+        RightMargin           MMM
+        ParIndent             MM
+        ItemSep               0
+        TopSep                0.7
+        BottomSep             0.7
+        ParSep                0
+        Align                 Block
+        LabelType             Centered_Top_Environment
+        LabelString           "Abstrak"
+        LabelBottomSep        0.5
+        Font
+          Size                Small
+        EndFont
+        LabelFont
+          Series              Bold
+          Size                Large
+        EndFont
+        HTMLLabelFirst        1
+        HTMLForceCSS          1
+        HTMLStyle
+                div.abstrak {
+                        margin: 4ex;
+                }
+                div.abstrak_item {
+                        font-size: small;
+                        padding-top: 1ex;
+                }
+                div.abstrak_label {
+                        font-weight: bold;
+                }
+        EndHTMLStyle
+End
+
+Style Acknowledgements
+        Margin                Static
+        LatexType             Environment
+        LatexName             acknowledge
+        Category              FrontMatter
+        NextNoIndent          1
+        LeftMargin            MMM
+        RightMargin           MMM
+        ParIndent             MM
+        ItemSep               0
+        TopSep                0.7
+        BottomSep             0.7
+        ParSep                0
+        Align                 Block
+        LabelType             Centered_Top_Environment
+        LabelString           "Acknowledgements"
+        LabelBottomSep        0.5
+        LabelFont
+          Series              Bold
+          Size                Large
+        EndFont
+        HTMLLabelFirst        1
+        HTMLForceCSS          1
+        HTMLStyle
+                div.ack {
+                        margin: 4ex;
+                }
+                div.ack_item {
+                        padding-top: 1ex;
+                }
+                div.ack_label {
+                        font-weight: bold;
+                }
+        EndHTMLStyle
+End
+
+#Style Subsubsection
+#    LabelType             Counter
+#    LabelCounter          subsubsection
+#    LabelString           "\thesubsection.\arabic{subsubsection}"
+#End
+
+#Style Paragraph
+#    LabelType             Counter
+#    LabelCounter          paragraph
+#    LabelString           "\thesubsubsection.\arabic{paragraph}"
+#End
+
+Input stdinsets.inc
+Input stdlists.inc
+Input stdcounters.inc
+Input stdfloats.inc
+Input stdsections.inc
+Input stdstarsections.inc
+Input numreport.inc
+
+
+Style Part
+	OptionalArgs         1
+	TocLevel 	     -1
+End
+      	
+
+
+Style Chapter
+	OptionalArgs         2
+	TocLevel 	     0
+End
+
+
+Style Chapter*
+	OptionalArgs         1
+End
+
+
+Style Section
+	OptionalArgs         2
+	TocLevel 1
+End
+
+
+Style Subsection
+	OptionalArgs         2
+	TocLevel 2
+End
+
+
+Style Subsubsection
+	OptionalArgs         2
+	TocLevel 3
+End
+
+
+Style Paragraph
+	OptionalArgs         2
+	TocLevel 4
+End
+
+
+Style Subparagraph
+	OptionalArgs         2
+	TocLevel 5
+End
+
+
+Style Chapterprecis
+	Margin               Static
+	LatexType            Command
+	LatexName            chapterprecis
+	NeedProtect          1
+	NextNoIndent         1
+	LeftMargin           MM
+	LabelSep             xxx
+	ParSkip              0.4
+	TopSep               0.4
+	BottomSep            0
+	ParSep               0.4
+	Align                Block
+	Font
+	  Shape              Italic
+	  Size               Normal
+	EndFont
+End
+
+#FIXME: this takes two parameters!!!
+Style Epigraph
+	Category              Maintext
+	Margin                Right_Address_Box
+	LatexType             Command
+	LatexName             epigraph
+	ParSkip               0.4
+	BottomSep             1.5
+	ParSep                1.5
+	Align                 Left
+End
+
+#FIXME: what is actually documented is \PoemTitle
+#but \poemtitle is defined nevertheless. Weird.
+Style Poemtitle
+	Category              Section
+	LatexType             Command
+	LatexName             poemtitle
+	NeedProtect           1
+	NextNoIndent          1
+	LabelSep              xxx
+	ParSkip               0.4
+	TopSep                0.4
+	ParSep                0.4
+	Align                 center
+	OptionalArgs          1
+	Font
+	   Series             Bold
+	EndFont
+End
+
+
+Style Poemtitle*
+	CopyStyle             Poemtitle
+	Category              Unnumbered
+	LatexName             poemtitle*
+	OptionalArgs          0
+End
+
+
+Input stdtitle.inc
+Input stdstruct.inc
+
+
+Style Bibliography
+	TopSep               4
+	LabelString          "Bibliography"
+	LabelFont
+	  Series             Bold
+	  Size               Huge
+	EndFont
+End
+
+
+Input lyxmacros.inc
+Input stdlayouts.inc
+
+Style Legend
+	Category            Maintext
+	LatexType           Command
+	LatexName           legend
+	NeedProtect         1
+	NextNoIndent        1
+	ParSkip             0.4
+	Align               Center
+End
+
+# Got these StartXxxmatter from http://www.mail-archive.com/lyx-devel@lists.lyx.org/msg35922.html
+Style StartFrontmatter
+  Margin                Static
+  LatexType             command
+  LatexName             frontmatter
+  LeftMargin            xxxxxxxxxxxxxx::xx
+  LabelSep              xx
+  KeepEmpty             1  
+  Align                 Left
+  LabelType             Static
+  LabelString           "Begin frontmatter!"
+  # label font definition
+  LabelFont 
+    Series              Bold
+    Shape               Italic
+    Color               Red
+  EndFont
+End
+
+Style StartMainmatter
+  Margin                Static
+  LatexType             command
+  LatexName             mainmatter
+  LeftMargin            xxxxxxxxxxxxxx::xx
+  LabelSep              xx
+  KeepEmpty             1  
+  Align                 Left
+  LabelType             Static
+  LabelString           "Begin mainmatter!"
+  # label font definition
+  LabelFont 
+    Series              Bold
+    Shape               Italic
+    Color               Red
+  EndFont
+End
+
+Style StartBackmatter
+  Margin                Static
+  LatexType             command
+  LatexName             backmatter
+  LeftMargin            xxxxxxxxxxxxxx::xx
+  LabelSep              xx
+  KeepEmpty             1  
+  Align                 Left
+  LabelType             Static
+  LabelString           "Begin backmatter!"
+  # label font definition
+  LabelFont 
+    Series              Bold
+    Shape               Italic
+    Color               Red
+  EndFont
+End
+
+Style ListOfAppendices
+  LabelString           "List of Appendices"
+  LatexType             command
+  LatexName             listofappendices
+  Align                 Center
+  LabelType             Static
+  KeepEmpty             1
+End
+
+Style MyGlossary
+        Margin                Static
+        LatexType             command
+        LatexName             myglosslist
+        Category              FrontMatter
+  LeftMargin            MMMMMMMMMMM
+#  LabelSep              xx
+  KeepEmpty             1  
+#  Align                 Left
+        ItemSep               0
+        TopSep                0.7
+        BottomSep             0.7
+        ParSep                0
+        LabelType             Static
+        LabelString           "Glossary of Terms"
+        LabelBottomSep        0.5
+        LabelFont
+          Series              Bold
+          Size                Large
+        EndFont
+        HTMLLabelFirst        1
+        HTMLForceCSS          1
+        HTMLStyle
+                div.gls {
+                        margin: 4ex;
+                }
+                div.gls_item {
+                        padding-top: 1ex;
+                }
+                div.gls_label {
+                        font-weight: bold;
+                }
+        EndHTMLStyle
+End
+
+Style MyAbbrevs
+        Margin                Static
+        LatexType             command 
+        LatexName             myabbrevlist
+        Category              FrontMatter
+  LeftMargin            MMMMMMMMMMMMM
+#  LabelSep              xx
+  KeepEmpty             1  
+#  Align                 Left
+        ItemSep               0
+        TopSep                0.7
+        BottomSep             0.7
+        ParSep                0
+        Align                 Block
+        LabelType             Static
+        LabelString           "List of Abbreviations"
+        LabelBottomSep        0.5
+        LabelFont
+          Series              Bold
+          Size                Large
+        EndFont
+        HTMLLabelFirst        1
+        HTMLForceCSS          1
+        HTMLStyle
+                div.abb {
+                        margin: 4ex;
+                }
+                div.abb_item {
+                        padding-top: 1ex;
+                }
+                div.abb_label {
+                        font-weight: bold;
+                }
+        EndHTMLStyle
+End
+
