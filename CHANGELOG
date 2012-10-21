@@ -1,0 +1,10 @@
+BRIEF CHANGELOG
+===============
+v1.01 October 21 2012
+   - Included hyperref support -- now with nice PDF bookmarks!
+   - Removed apacite from uumthesis.cls; users may now specify which
+     bibliography style to use in the .tex file, e.g. IEEEtran or ACM.
+
+v1.0 September 21 2012
+   - First released version.
+

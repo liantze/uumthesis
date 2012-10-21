@@ -1,5 +1,9 @@
 \documentclass{uumthesis}
 
+%%% Uncomment if using APA citation and bibliography style
+%\usepackage[nosectionbib]{apacite}
+
+
 \usepackage{graphicx}
 
 \title{<Your Thesis Title>}
@@ -11,158 +15,35 @@
 \frontmatter
 \maketitle
 
-\begin{abstrak}
-Inilah abstrak dalam Bahasa Melayu. `Hyphenation' adalah berdasarkan rukun Bahasa Melayu secara automatik. Auto single-line spacing. Data korpus merupakan data bahasa Melayu yang datangnya dalam dua bentuk sumber, iaitu bentuk tulisan dan bentuk lisan. Bentuk tulisan seperti buku, majalah, surat khabar, makalah, monograf, dokumen, kertas kerja, efemeral, puisi, drama, kad bahan, surat, risalah dan sebagainya. Sementara bentuk lisan yang ditranskripsikan seperti ucapan, wawancara, temu bual, perbualan dan sebagainya dalam pelbagai bentuk rakaman.
-
-\textbf{Kata kunci:} Kek, contoh.
-\end{abstrak}
-
-\begin{abstract}
-This is the English abstract. Auto single-line spacing. Jelly dessert sesame snaps. Oat cake jelly oat cake gingerbread sweet roll apple pie muffin sesame snaps. Dragée icing carrot cake faworki tart chocolate cake. Cookie apple pie chupa chups tootsie roll sweet roll toffee chocolate bar gummies gummi bears. Apple pie lollipop candy canes jujubes caramels. Soufflé powder liquorice fruitcake. Tiramisu fruitcake candy canes jelly beans muffin chupa chups bonbon. Donut sugar plum fruitcake liquorice chocolate pastry lollipop chocolate bar cookie. Jelly-o donut marshmallow chupa chups danish. Sugar plum pudding sweet roll muffin applicake biscuit tart fruitcake wafer. Pudding croissant carrot cake tiramisu candy canes. Powder powder jelly-o. Pie croissant cake chocolate cake carrot cake sweet apple pie sweet roll donut.
-
-Tootsie roll pastry dragée macaroon pudding gummi bears candy canes gummies faworki. Cupcake faworki sesame snaps halvah soufflé bonbon dessert jelly-o. Lemon drops jujubes liquorice gummi bears. Lemon drops dragée powder bonbon applicake chocolate gummies. Wypas dragée cheesecake cheesecake ice cream lemon drops topping donut. Bear claw marzipan candy canes sweet roll cookie chocolate cake cupcake chocolate bar tootsie roll. Donut brownie chocolate bar apple pie. Muffin pudding gingerbread pudding jelly candy canes. Cookie soufflé carrot cake candy canes lollipop icing bonbon oat cake. Gummi bears jujubes wafer. Liquorice sugar plum topping cotton candy gummi bears icing wafer jujubes croissant. Lemon drops sweet fruitcake sugar plum dragée. Gingerbread dragée biscuit lollipop bear claw. Lemon drops faworki icing marzipan topping candy canes halvah liquorice chocolate bar.
-
-\textbf{Keywords:} Cupcake, dummy text.
-\end{abstract}
-
-\begin{acknowledge}
-This is the acknowledgements. Sugar plum pastry cotton candy. Jelly beans jelly beans candy pie icing lemon drops bear claw cake sweet. Chocolate cake croissant pastry dragée apple pie sugar plum. Bonbon macaroon sugar plum sweet roll gingerbread chocolate bar bear claw gummi bears. Tootsie roll jelly beans pudding. Chocolate bar jelly-o biscuit cupcake wafer dessert. Lemon drops bear claw tootsie roll. Dragée oat cake jelly beans wypas biscuit tart. Cupcake cake applicake. Jujubes chocolate cake apple pie powder bonbon marshmallow. Applicake sweet roll sweet wafer cheesecake croissant wypas. Chupa chups danish cake jelly beans tiramisu apple pie. Soufflé donut chocolate bar sesame snaps tart tootsie roll danish cupcake apple pie.
-\end{acknowledge}
+\input{abstrak-ms}
+\input{abstract-en}
+\input{ack}
 
 \tableofcontents
 \listoftables
 \listoffigures
 \listofappendices
 
-\myglosslist
-\begin{description}
-   \item[database] an organized collection of data, today typically in digital form.
-   \item[data structure] a particular way of storing and organizing data in a computer so that it can be used efficiently.
-\end{description}
-
-\myabbrevlist
-\begin{tabular}{>{\bfseries}l l}
-   CPU & central processing unit\\
-   DBMS & database management system\\
-\end{tabular}
+\input{glosslist}
+\input{abbrevlist}
 
 \mainmatter
 
-\chapter{Introduction}
-Candy canes topping pudding applicake tart jelly beans brownie. Dessert jelly faworki cotton candy dessert caramels. Cheesecake toffee fruitcake jelly pudding marzipan pastry. Lollipop wafer marshmallow powder powder bonbon sweet roll. Toffee toffee apple pie dragée cookie cheesecake cupcake chocolate cake.
+\input{chap-intro}
+\input{chap-litreview}
 
-\section{Problem}
+%%% APA citation and bibliography style
+%\bibliographystyle{apacite}
 
-Donut jelly jelly-o sweet roll marshmallow jelly gummies topping. Pie soufflé oat cake cake cake. Chocolate bar croissant biscuit. Dragée liquorice ice cream marshmallow. Donut sesame snaps sweet roll carrot cake gummi bears bear claw marshmallow marzipan. Dragée tootsie roll pudding gingerbread pastry lemon drops brownie bear claw wafer. Liquorice pudding jelly-o. Jelly-o sweet roll icing lemon drops tiramisu carrot cake dessert gummi bears. Jujubes sugar plum brownie pastry. Sweet roll chupa chups muffin. Bonbon marzipan powder caramels jujubes marshmallow gingerbread. Carrot cake cookie sugar plum jujubes sesame snaps sesame snaps candy icing soufflé.
+%%% IEEE citation and bibliography style
+\bibliographystyle{IEEEtran}
 
-Pastry marzipan bonbon. Candy toffee pastry marshmallow croissant carrot cake. Cheesecake tootsie roll chocolate cake wypas faworki liquorice jelly. Candy canes topping pudding applicake tart jelly beans brownie. Dessert jelly faworki cotton candy dessert caramels. Cheesecake toffee fruitcake jelly pudding marzipan pastry. Lollipop wafer marshmallow powder powder bonbon sweet roll. Toffee toffee apple pie dragée cookie cheesecake cupcake chocolate cake. Lemon drops bonbon powder gummies sesame snaps. Sweet dessert cupcake topping bonbon bear claw chocolate oat cake. Fruitcake muffin sesame snaps liquorice candy canes jujubes apple pie. Halvah brownie tootsie roll muffin croissant chocolate croissant lollipop apple pie. Macaroon soufflé soufflé sweet. Tart sweet candy pastry.
-
-\subsection{Motivation}
-
-Tootsie roll pudding caramels dragée cookie gingerbread lollipop. Gummi bears wypas muffin sweet roll toffee halvah. Candy carrot cake pie sweet roll croissant croissant carrot cake oat cake. Fruitcake candy canes cake lemon drops cupcake powder. Dragée chocolate powder ice cream. Cupcake cupcake biscuit ice cream lemon drops. Applicake chupa chups donut. Chocolate cheesecake sugar plum. Gummies wypas chocolate cake jelly chocolate bar liquorice muffin chocolate cake. Lollipop bear claw brownie. Muffin dessert sugar plum toffee dessert tart cookie. Candy powder gingerbread chocolate bar chocolate cake applicake caramels cookie. Gummies jelly biscuit biscuit muffin jelly tart.
-
-\begin{table}[hbt!]
-   \centering
-   \caption{Yet Another Test Table}
-   \label{tab:dummy}
-   \begin{tabular}{l r}
-      \hline
-      Category & Count\\
-      \hline
-      Cats & 30\\
-      Dogs & 25\\
-      \hline
-   \end{tabular}
-\end{table}
-
-\begin{figure}[hbt!]\centering
-   \includegraphics[width=.3\textwidth]{green} 
-   \caption{Yet Another Test Figure}
-   \label{fig:dummy}
-\end{figure}
-
-
-\subsubsection{More}
-
-Jelly caramels faworki sesame snaps cotton candy jujubes. Pudding toffee cheesecake. Lollipop muffin macaroon bonbon apple pie muffin lollipop. Faworki carrot cake apple pie powder chocolate cake chocolate bar cookie. Wafer gummies topping applicake macaroon gingerbread cupcake brownie. Croissant muffin gummies. Halvah pie brownie chocolate bar brownie macaroon. Gummi bears jelly-o gingerbread ice cream chocolate cake. Cupcake wypas chocolate bar gummi bears pastry gingerbread icing. Gummies jelly-o powder sesame snaps oat cake bear claw tiramisu pie danish. Oat cake cotton candy tootsie roll sesame snaps dragée fruitcake. Lollipop pastry bear claw.
-
-Liquorice faworki marshmallow macaroon gummi bears chocolate caramels. Cheesecake lollipop bear claw brownie gingerbread candy. Caramels chocolate sugar plum brownie cheesecake. Cupcake jelly beans cheesecake marshmallow marzipan cupcake jujubes lollipop chocolate cake. Tootsie roll oat cake macaroon apple pie. Jelly-o muffin croissant cotton candy muffin carrot cake. Sesame snaps apple pie sugar plum apple pie chocolate bar bonbon chupa chups bonbon jujubes. Ice cream pastry powder chocolate. Muffin jelly-o powder cupcake gummi bears topping brownie. Bonbon cookie donut candy gingerbread. Tart marzipan croissant candy canes chocolate bar donut liquorice. Halvah applicake dragée carrot cake topping tiramisu danish donut fruitcake. Jelly dragée tiramisu biscuit toffee gummi bears jelly-o tart tiramisu.
-
-\paragraph{Finally}
-
-Sugar plum pastry cotton candy. Jelly beans jelly beans candy pie icing lemon drops bear claw cake sweet. Chocolate cake croissant pastry dragée apple pie sugar plum. Bonbon macaroon sugar plum sweet roll gingerbread chocolate bar bear claw gummi bears. Tootsie roll jelly beans pudding. Chocolate bar jelly-o biscuit cupcake wafer dessert. Lemon drops bear claw tootsie roll. Dragée oat cake jelly beans wypas biscuit tart. Cupcake cake applicake. Jujubes chocolate cake apple pie powder bonbon marshmallow. Applicake sweet roll sweet wafer cheesecake croissant wypas. Chupa chups danish cake jelly beans tiramisu apple pie. Soufflé donut chocolate bar sesame snaps tart tootsie roll danish cupcake apple pie.
-
-\begin{figure}[hbt!]\centering
-   \includegraphics[width=.3\textwidth]{green} 
-   \caption{Test Figure}
-   \label{fig:dummy:2}
-\end{figure}
-
-Pie fruitcake lemon drops. Bonbon caramels\footnote{Marshmallow donut jujubes cookie biscuit caramels chocolate. Topping cake applicake fruitcake faworki bear claw chupa chups halvah.} biscuit candy. Marshmallow donut jujubes cookie biscuit caramels chocolate. Topping cake applicake fruitcake faworki bear claw chupa chups halvah. Applicake lemon drops gummies powder wafer gummies. Fruitcake icing candy. Lemon drops brownie dessert gummi bears danish jelly-o. Wafer chocolate candy canes. Powder sesame snaps sweet roll pastry. Gingerbread halvah jelly-o icing wypas fruitcake bonbon chupa chups croissant. Marshmallow liquorice pastry apple pie. Chocolate marzipan chocolate powder. Gummi bears tart sugar plum oat cake.
-
-This is a citation \cite{Lim:2009} and also according to \citeA{budanitsky:hirst:2006}.
-
-The following is a quotation that is single-spaced automatically:
-
-\begin{quote}
-Tart chocolate cake croissant tiramisu. Lemon drops dessert lollipop tootsie roll toffee jelly-o dragée jelly-o cheesecake. Apple pie soufflé icing topping. Toffee jujubes wypas lollipop sweet roll marshmallow wypas topping. Cotton candy sweet roll marshmallow. Chocolate bar candy apple pie. Tart dessert oat cake lollipop caramels. Ice cream soufflé tart. Sweet sweet topping gummies. Pie wafer halvah cupcake dessert fruitcake gummies liquorice dragée. Applicake dessert gummi bears pastry. Bear claw muffin liquorice carrot cake caramels dragée wafer topping croissant. Oat cake gummies wafer apple pie jujubes faworki.
-\end{quote}
-
-\begin{table}[hbt!]
-   \centering
-   \caption{Test Table}
-   \label{tab:dummy:2}
-   \begin{tabular}{l r}
-      \hline
-      Category & Count\\
-      \hline
-      Cats & 30\\
-      Dogs & 25\\
-      \hline
-   \end{tabular}
-\end{table}
-
-Jelly caramels faworki sesame snaps cotton candy jujubes. Pudding toffee cheesecake. Lollipop muffin macaroon bonbon apple pie muffin lollipop. Faworki carrot cake apple pie powder chocolate cake chocolate bar cookie. Wafer gummies topping applicake macaroon gingerbread cupcake brownie. Croissant muffin gummies. Halvah pie brownie chocolate bar brownie macaroon. Gummi bears jelly-o gingerbread ice cream chocolate cake. Cupcake wypas chocolate bar gummi bears pastry gingerbread icing. Gummies jelly-o powder sesame snaps oat cake bear claw tiramisu pie danish. Oat cake cotton candy tootsie roll sesame snaps dragée fruitcake. Lollipop pastry bear claw.
-
-
-
-\chapter{Literature Review}
-
-Tart chocolate cake croissant tiramisu. Lemon drops dessert lollipop tootsie roll toffee jelly-o dragée jelly-o cheesecake. Apple pie soufflé icing topping. Toffee jujubes wypas lollipop sweet roll marshmallow wypas topping. Cotton candy sweet roll marshmallow. Chocolate bar candy apple pie. Tart dessert oat cake lollipop caramels. Ice cream soufflé tart. Sweet sweet topping gummies. Pie wafer halvah cupcake dessert fruitcake gummies liquorice dragée. Applicake dessert gummi bears pastry. Bear claw muffin liquorice carrot cake caramels dragée wafer topping croissant. Oat cake gummies wafer apple pie jujubes faworki.
-
-\begin{table}[hbt!]
-   \centering
-   \caption{Yet Another Test Table}
-   \label{tab:dummy:3}
-   \begin{tabular}{l r}
-      \hline
-      Category & Count\\
-      \hline
-      Cats & 30\\
-      Dogs & 25\\
-      \hline
-   \end{tabular}
-\end{table}
-
-Tart dessert oat cake lollipop caramels. Ice cream soufflé tart. Sweet sweet topping gummies. Pie wafer halvah cupcake dessert fruitcake gummies liquorice dragée.
-
-\begin{figure}[hbt!]\centering
-   \includegraphics[width=.3\textwidth]{green} 
-   \caption{Yet Another Test Figure}
-   \label{fig:dummy:3}
-\end{figure}
-
-
+%%% ACM citation and bibliography style
+%\bibliographystyle{acm}
 
 \bibliography{myrefs}
 
 \appendix
-\chapter{Full Details}
-Jelly caramels faworki sesame snaps cotton candy jujubes. Pudding toffee cheesecake. Lollipop muffin macaroon bonbon apple pie muffin lollipop. Faworki carrot cake apple pie powder chocolate cake chocolate bar cookie. Wafer gummies topping applicake macaroon gingerbread cupcake brownie. Croissant muffin gummies. Halvah pie brownie chocolate bar brownie macaroon. Gummi bears jelly-o gingerbread ice cream chocolate cake. Cupcake wypas chocolate bar gummi bears pastry gingerbread icing. Gummies jelly-o powder sesame snaps oat cake bear claw tiramisu pie danish. Oat cake cotton candy tootsie roll sesame snaps dragée fruitcake. Lollipop pastry bear claw.
-
-Liquorice faworki marshmallow macaroon gummi bears chocolate caramels. Cheesecake lollipop bear claw brownie gingerbread candy. Caramels chocolate sugar plum brownie cheesecake. Cupcake jelly beans cheesecake marshmallow marzipan cupcake jujubes lollipop chocolate cake. Tootsie roll oat cake macaroon apple pie. Jelly-o muffin croissant cotton candy muffin carrot cake. Sesame snaps apple pie sugar plum apple pie chocolate bar bonbon chupa chups bonbon jujubes. Ice cream pastry powder chocolate. Muffin jelly-o powder cupcake gummi bears topping brownie. Bonbon cookie donut candy gingerbread. Tart marzipan croissant candy canes chocolate bar donut liquorice. Halvah applicake dragée carrot cake topping tiramisu danish donut fruitcake. Jelly dragée tiramisu biscuit toffee gummi bears jelly-o tart tiramisu.
-
-\chapter{Sample Code}
-Tart chocolate cake croissant tiramisu. Lemon drops dessert lollipop tootsie roll toffee jelly-o dragée jelly-o cheesecake. Apple pie soufflé icing topping. Toffee jujubes wypas lollipop sweet roll marshmallow wypas topping. Cotton candy sweet roll marshmallow. Chocolate bar candy apple pie. Tart dessert oat cake lollipop caramels. Ice cream soufflé tart. Sweet sweet topping gummies. Pie wafer halvah cupcake dessert fruitcake gummies liquorice dragée. Applicake dessert gummi bears pastry. Bear claw muffin liquorice carrot cake caramels dragée wafer topping croissant. Oat cake gummies wafer apple pie jujubes faworki.
-
+\input{app-details}
+\input{app-code}
 \end{document}

@@ -8,9 +8,11 @@ uumthesis, a LaTeX class for typesetting a Universiti Utara Malaysia
     Files:
     uumthesis.cls         LaTeX class file
     uumthesis.layout      LyX layout file
-    uumthesis-manual.pdf   A quick user guide
-    thesis.tex            Example thesis .tex file
-    thesis.lyx            Example thesis .lyx file
+    uumthesis-manual.pdf  A quick user guide
+    thesis.tex            Example 'main' thesis .tex file
+    *.tex                 Other component .tex files (chapters etc)
+    thesis.lyx            Example 'main' thesis .lyx file
+    *.lyx                 Other component .lyx files (chapters etc)
     thesis.pdf            Example PDF file of a UUM thesis, can be
                           generated from thesis.tex and friends
     myrefs.bib            Sample BibTeX bibliography database file

@@ -1,4 +1,4 @@
-%% uumthesis.cls 2012/09/21 version 1.0
+%% uumthesis.cls 2012/10/21 version 1.01
 %% 
 %% This is the UUM thesis LaTeX class for postgraduate research students
 %%  of Universiti Utara Malaysia (UUM), Kedah, Malaysia, formatted
@@ -21,13 +21,18 @@
 %
 %  BRIEF CHANGELOG
 %  ===============
+%  v1.01 October 21 2012
+%      - Included hyperref support -- now with nice PDF bookmarks!
+%      - Removed apacite from uumthesis.cls; users may now specify which
+%        bibliography style to use in the .tex file, e.g. IEEEtran or ACM.
+%
 %  v1.0 September 21 2012
 %      - First released version.
 %
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{uumthesis}[2012/09/21 LaTeX2e class for UUM Thesis v1.0.  Copyright (c) 2012 Lim Lian Tze (liantze@gmail.com)]
 
-\LoadClass[12pt,a4paper,oneside]{memoir}
+\LoadClass[12pt,a4paper,oneside,oldfontcommands]{memoir}
 
 %%%%%%%%%
 % Fonts and encodings
@@ -171,7 +176,10 @@ Universiti Utara Malaysia\\
 \setlength\parindent{0pt}
 \abnormalparskip{\baselineskip}
 \cftinserthook{toc}{NoBoldChapter}
-}{}
+}{
+\ifpdf\pdfbookmark[-1]{Front Matter}{front}\fi
+\ifxetex\pdfbookmark[-1]{Front Matter}{front}\fi
+}
 \patchcommand{\mainmatter}{
 \setstretch{1.75}
 %\setlength\parindent{12.5mm}
@@ -187,9 +195,12 @@ Universiti Utara Malaysia\\
 \cftinserthook{toc}{BoldChapter}
 \let\orichapter\chapter
 \renewcommand\chapter{\@ifstar{\mystarchap}{\mychap}}
-\newcommand\mychap[1]{\orichapter[\MakeUppercase{##1}]{##1}}
+\newcommand\mychap[1]{\orichapter[\texorpdfstring{\MakeUppercase{##1}}{##1}]{##1}}
 \newcommand\mystarchap[1]{\orichapter*{##1}}
-}{}
+}{
+\ifpdf\pdfbookmark[-1]{Main Chapters}{main}\fi
+\ifxetex\pdfbookmark[-1]{Main Chapters}{main}\fi
+}
 \RequirePackage{etoolbox}
 \AtBeginEnvironment{quote}{\SingleSpacing}
 \AtBeginEnvironment{quotation}{\SingleSpacing}
@@ -267,6 +278,9 @@ Universiti Utara Malaysia\\
 \renewcommand{\afterapdtitle}{\par\vspace*{22pt}\setstretch{1.5}}
 
 \addtodef\appendix{%
+\clearpage
+\ifpdf\pdfbookmark[-1]{Appendices}{back}\fi
+\ifxetex\pdfbookmark[-1]{Appendices}{back}\fi
 \renewcommand\chaptername{\appendixname}
 \renewcommand{\printchapternum}{\chapnumfont\Alph{chapter}}
 \cftinserthook{toc}{A}
@@ -279,12 +293,15 @@ Universiti Utara Malaysia\\
 }
 }{}
 
-%%%%%%%%%%
-% References and Citation
-%%%%%%%%%%
-\RequirePackage[nosectionbib]{apacite}
-\bibliographystyle{apacite}
+%%%%%%%%%%%%
+% Hyperref support
+%%%%%%%%%%%%
+\RequirePackage[bookmarksnumbered,bookmarksdepth=4]{hyperref}
 
+%%%%%%%%%%%%
+% APA citation style
+%%%%%%%%%%%%
+%\RequirePackage[nosectionbib]{apacite}
 
 %%%%%%%%%%%%
 % Abstracts
