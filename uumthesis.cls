@@ -1,4 +1,4 @@
-%% uumthesis.cls 2012/10/21 version 1.01
+%% uumthesis.cls 2012/10/22 version 1.02
 %% 
 %% This is the UUM thesis LaTeX class for postgraduate research students
 %%  of Universiti Utara Malaysia (UUM), Kedah, Malaysia, formatted
@@ -21,6 +21,10 @@
 %
 %  BRIEF CHANGELOG
 %  ===============
+%  v1.02 October 22 2012
+%      - Changed bibliography heading to "References" and single
+%        line spacing for the references list.
+%
 %  v1.01 October 21 2012
 %      - Included hyperref support -- now with nice PDF bookmarks!
 %      - Removed apacite from uumthesis.cls; users may now specify which
@@ -30,7 +34,7 @@
 %      - First released version.
 %
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{uumthesis}[2012/09/21 LaTeX2e class for UUM Thesis v1.0.  Copyright (c) 2012 Lim Lian Tze (liantze@gmail.com)]
+\ProvidesClass{uumthesis}[2012/10/22 LaTeX2e class for UUM Thesis v1.02.  Copyright (c) 2012 Lim Lian Tze (liantze@gmail.com)]
 
 \LoadClass[12pt,a4paper,oneside,oldfontcommands]{memoir}
 
@@ -294,14 +298,15 @@ Universiti Utara Malaysia\\
 }{}
 
 %%%%%%%%%%%%
-% Hyperref support
+% Bibliography
 %%%%%%%%%%%%
-\RequirePackage[bookmarksnumbered,bookmarksdepth=4]{hyperref}
+\addto{\captionsenglish}{%
+  \renewcommand{\bibname}{REFERENCES}
+}
+\AtBeginEnvironment{thebibliography}{\SingleSpacing}
+\AtBeginEnvironment{bibitemlist}{\vspace{\onelineskip}}
 
-%%%%%%%%%%%%
-% APA citation style
-%%%%%%%%%%%%
-%\RequirePackage[nosectionbib]{apacite}
+\RequirePackage[bookmarksnumbered,bookmarksdepth=4]{hyperref}
 
 %%%%%%%%%%%%
 % Abstracts

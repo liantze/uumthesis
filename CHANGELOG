@@ -1,5 +1,10 @@
 BRIEF CHANGELOG
 ===============
+
+v1.02 October 22 2012
+   - Changed bibliography heading to "References" and single
+     line spacing for the references list.
+
 v1.01 October 21 2012
    - Included hyperref support -- now with nice PDF bookmarks!
    - Removed apacite from uumthesis.cls; users may now specify which
