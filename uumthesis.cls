@@ -1,4 +1,4 @@
-%% uumthesis.cls 2012/10/22 version 1.02
+%% uumthesis.cls 2014/08/05 version 1.03
 %% 
 %% This is the UUM thesis LaTeX class for postgraduate research students
 %%  of Universiti Utara Malaysia (UUM), Kedah, Malaysia, formatted
@@ -15,12 +15,17 @@
 %% I'll always try.
 %%
 %%
-%% Copyright (c) 2012 by Lim Lian Tze
+%% Copyright (c) 2012-2014 by Lim Lian Tze
 %%
 %% Current maintainer: Lim Lian Tze (liantze@gmail.com)
 %
 %  BRIEF CHANGELOG
 %  ===============
+%  v1.03 August 05 2014
+%      - Both table and figure captions are left-aligned. Prefix
+%        and number are italic; caption text is upright. Separator
+%        is a dot and not colon.
+%
 %  v1.02 October 22 2012
 %      - Changed bibliography heading to "References" and single
 %        line spacing for the references list.
@@ -83,7 +88,7 @@
 % Degree type and faculty
 %%%%%%%%
 \newcommand{\degreetype}[1]{\def\@degreetype{#1}}
-
+\newcommand{\faculty}[1]{\def\@faculty{#1}}
 
 %%%%%%%%%%%%
 % Chapter headings
@@ -199,7 +204,13 @@ Universiti Utara Malaysia\\
 \cftinserthook{toc}{BoldChapter}
 \let\orichapter\chapter
 \renewcommand\chapter{\@ifstar{\mystarchap}{\mychap}}
-\newcommand\mychap[1]{\orichapter[\texorpdfstring{\MakeUppercase{##1}}{##1}]{##1}}
+\newcommand\mychap[2][]{%
+\ifblank{##1}{
+\orichapter[\texorpdfstring{\MakeUppercase{##2}}{##2}]{##2}%
+}{%
+\orichapter[\texorpdfstring{\MakeUppercase{##1}}{##1}]{##2}%
+}
+}
 \newcommand\mystarchap[1]{\orichapter*{##1}}
 }{
 \ifpdf\pdfbookmark[-1]{Main Chapters}{main}\fi
@@ -237,8 +248,8 @@ Universiti Utara Malaysia\\
 % Captions
 %%%%%%%%%%%
 \RequirePackage{caption}
-\captionsetup[figure]{justification=raggedright,font=it,singlelinecheck=false}
-\captionsetup[table]{position=above,font=it}
+\captionsetup[figure]{justification=raggedright,labelfont=it,labelsep=period,singlelinecheck=false}
+\captionsetup[table]{justification=raggedright,position=above,labelfont=it,labelsep=period,singlelinecheck=false}
 
 %%%%%%%%%%%
 % ToC etc
@@ -256,8 +267,11 @@ Universiti Utara Malaysia\\
 \addtolength{\cftsubsubsectionindent}{\cftsubsectionnumwidth}
 \setlength{\cftparagraphindent}{\cftsubsubsectionindent}
 \addtolength{\cftparagraphindent}{\cftsubsubsectionnumwidth}
+\settowidth{\cftchapternumwidth}{CHAPTER THREE }
 \let\regularChapterNumberLine\chapternumberline
-\renewcommand\chapternumberline[1]{CHAPTER\space\NUMBERstringnum{#1}\space\space\space}
+\renewcommand*\chapternumberline[1]{%
+\makebox[\cftchapternumwidth][l]{CHAPTER\space\NUMBERstringnum{#1}}%
+}
 \renewcommand{\cftfigurename}{Figure }
 \renewcommand{\cfttablename}{Table }
 
